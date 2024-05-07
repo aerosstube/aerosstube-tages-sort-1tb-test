@@ -5,6 +5,6 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-head -c 1G </dev/urandom > "$1"
+dd if=/dev/urandom of="$1" bs=1G count=1
 
 echo "File generated: $1"
